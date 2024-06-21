@@ -5,7 +5,7 @@ For the fronted I use the tailwind cdn so an internet connection is kinda requir
 I did not put a lot of effort into the frontend but just a basic layout because I don't like ugly looking things.
 
 The test is not 100% completed there are 2 functionalities missing:
-1. being able to filter on multiple categories via the website
+1. being able to filter on multiple categories via the website (the front end is not prepared for this, it is possible via the api)
 2. the interactive ingredients on the view page 
 
 ## API
