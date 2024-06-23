@@ -20,7 +20,7 @@ You can view all the recipes in a paginated list on the homescreen with a functi
 > /?category=category1&search=random%20search%20term
 ### Detail page
 You can view a detailed recipe with 4 more random recipe suggestions within the same category, the current recipe is always excluded. 
-These 4 random recipes are cached for 24h.
+These 4 random recipes are cached for the rest of the day.
 
 We don't want to expose database id's into limbo so always make urls sluggable. This also has some boring SEO advantages. 
 > /recipe/{slug}

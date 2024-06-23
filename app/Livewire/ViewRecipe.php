@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Recipe;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 
@@ -17,7 +18,7 @@ class ViewRecipe extends Component
         $this->recipe = Recipe::findBySlug($slug);
 
         $cacheKey = 'random_recipes_' . $this->recipe->category->name . '_' . $this->recipe->id;
-        $cacheDuration = now()->addHours(24);
+        $cacheDuration = Carbon::now()->secondsUntilEndOfDay();
 
         $this->randomRecipes = Cache::remember($cacheKey, $cacheDuration, function () {
             return Recipe::whereHas('category', function ($categoryQuery) {

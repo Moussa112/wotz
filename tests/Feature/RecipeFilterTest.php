@@ -27,13 +27,13 @@ class RecipeFilterTest extends TestCase
         $this->assertDatabaseCount('categories', 2);
         $this->assertDatabaseCount('recipes', 2);
 
-//        $response = $this->get('/api/recipes?filter[category.name]=dinner');
-//
-//        $response->assertStatus(200)
-//            ->assertJsonCount(1, 'data')
-//            ->assertJsonFragment([
-//                'title' => 'Italian Recipe'
-//            ]);
+        $response = $this->get('/api/recipes?filter[category.name]=dinner');
+
+        $response->assertStatus(200)
+            ->assertJsonCount(1, 'data')
+            ->assertJsonFragment([
+                'title' => 'Italian Recipe'
+            ]);
     }
 
     /** @test */
@@ -51,13 +51,13 @@ class RecipeFilterTest extends TestCase
         $this->assertDatabaseCount('ingredients', 2);
         $this->assertDatabaseCount('recipes', 2);
 
-//        $response = $this->get('/api/recipes?filter[search]=pasta');
-//
-//        $response->assertStatus(200)
-//            ->assertJsonCount(1, 'data')
-//            ->assertJsonFragment([
-//                'title' => 'Spaghetti Carbonara'
-//            ]);
+        $response = $this->get('/api/recipes?filter[search]=pasta');
+
+        $response->assertStatus(200)
+            ->assertJsonCount(1, 'data')
+            ->assertJsonFragment([
+                'title' => 'Spaghetti Carbonara'
+            ]);
     }
 
     /** @test */
@@ -85,12 +85,12 @@ class RecipeFilterTest extends TestCase
         $this->assertDatabaseCount('ingredients', 2);
         $this->assertDatabaseCount('recipes', 3);
 
-//        $response = $this->get('/api/recipes?filter[category.name]=dinner&filter[search]=pasta');
-//
-//        $response->assertStatus(200)
-//            ->assertJsonCount(1, 'data')
-//            ->assertJsonFragment([
-//                'title' => 'Spaghetti Carbonara'
-//            ]);
+        $response = $this->get('/api/recipes?filter[category.name]=dinner&filter[search]=pasta');
+
+        $response->assertStatus(200)
+            ->assertJsonCount(1, 'data')
+            ->assertJsonFragment([
+                'title' => 'Spaghetti Carbonara'
+            ]);
     }
 }
